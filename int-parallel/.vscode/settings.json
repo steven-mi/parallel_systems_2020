@@ -1,0 +1,10 @@
+{
+    "files.associations": {
+        "core.h": "c",
+        "cmath": "c",
+        "stdlib.h": "c",
+        "iostream": "c",
+        "*.tcc": "c",
+        "stdio.h": "c"
+    }
+}
