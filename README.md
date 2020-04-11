@@ -1,6 +1,6 @@
-# C++ Adventures
+# 
 
-This repository contains project to refresh my C++ knowledge. Following projects are available:
+This repository is a collection of all exercises during the summer semester 2020
 
 - `add` - simple project to calculate the sum of two numbers
 - `diff` - simple projects to calculate the difference of two numbers
