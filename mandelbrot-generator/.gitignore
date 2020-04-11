@@ -1,3 +1,5 @@
 *.o
 add
 *_test
+
+.vscode
