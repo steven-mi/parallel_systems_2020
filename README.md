@@ -1,4 +1,4 @@
-# 
+# Exercises Parallel Systems 
 
 This repository is a collection of all exercises during the summer semester 2020
 
