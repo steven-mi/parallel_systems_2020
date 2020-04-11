@@ -12,7 +12,7 @@
 #
 
 # The name of the main executable
-TARGET=generator
+TARGET=generate
 
 # Flags and stuff, change as required
 OPTIMIZE=-O3
@@ -25,11 +25,11 @@ CXXFLAGS=-std=c++11
 # Flags for the linker
 LDFLAGS=
 # Additional linker libs
-LDLIBS=-lm 
+LDLIBS=-lm
 
 # Compilers
-CC=gcc -fopenmp
-CPP=g++ -fopenmp
+CC=gcc
+CPP=g++
 
 ##############################################################
 # Normally there shouldn't be a need to modify the following

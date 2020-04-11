@@ -2,36 +2,28 @@
 #include <stdlib.h>
 #include <stdio.h>
 
-/**
- * This is a simple function to calculate the integral of a function f in between two values l and r
- *
- * @param f method which returns a value
- * @param l left integral boundary
- * @param r right integral boundary
- * @param steps amount of steps 
- * @return the diff of x and y
+/* This method check if a given number is inside the mantelbrot set
+ * 
+ * @param re real part of the number
+ * @param im imaginary part of the number
+ * @return 1 if its a mandelbrot number, 0 else
  */
-double integrale(double (*f)(double x), double l, double r, int steps)
+int isMandelbrot(double re, double im)
 {
-	if (steps <= 0 || l == r)
+	double Z_re = re;
+	double Z_im = im;
+
+	int mandelbrot = 1;
+	for (unsigned n = 0; n < 100; ++n) // max number of iterations
 	{
-		return 0.0;
+		double Z_re2 = Z_re * Z_re, Z_im2 = Z_im * Z_im;
+		if (Z_re2 + Z_im2 > 4)
+		{
+			mandelbrot = 0;
+			break;
+		}
+		Z_im = 2 * Z_re * Z_im + im;
+		Z_re = Z_re2 - Z_im2 + re;
 	}
-
-	double increment = abs(r - l) / (double)steps;
-	double result = 0.0;
-
-#pragma omp parallel for reduction(+ \
-								   : result)
-	for (int i = 0; i < steps; i++)
-	{
-		double index = l + (double)i * increment;
-		double area = f(index) * increment;
-
-#pragma omp atomic
-		result = result + area;
-	}
-	return result;
+	return mandelbrot;
 }
-
-

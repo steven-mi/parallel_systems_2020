@@ -1,7 +1,14 @@
-# Simple C Project - Integral
-This is a simple C project for calculating the integral of any function. The main app calculates the discrete integral of `sqrt(1 - x^2)` and multiplies it with 2, resulting in the number PI as a return. The calculated estimation of PI will then be printed to the terminal. As an input parameter, the amount of steps used, is defined. Given that we are using a estimation to calculate the integral, the higher the input value, the more accurate is our PI estimation.
+# Mandelbrot Generator
+This project is about visualizing the Mandelbrot set. 
 
 ```bash
 make 
-./integrale 10000
+
+# xsize = image width
+# ysize = image height
+# minRe = real part of the smalles possible Mandelbrot number in our visualization
+# maxRe = real part of the biggest possible Mandelbrot number in our visualization
+# minIm = imaginary part of the smalles possible Mandelbrot number in our visualization
+# maxIm = imaginary part of the biggest possible Mandelbrot number in our visualization
+./generate 600 200 -1 2 -1 1 
 ```
